@@ -1,1 +1,22 @@
-hello world from frontend
+<h1>hello world from frontend</h1>
+
+<h2>Table of Cities:</h2>
+<table>
+  <thead>
+    <tr>
+      <th>City</th>
+      <th>Area</th>
+      <th>Population</th>
+      <th>Density</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let city of cities">
+      <td>{{ city["name"] }}</td>
+      <td>{{ city["area"] }}</td>
+      <td [ngStyle]="{'background': city['population'] > 1000000 ? 'yellowgreen' : 'white'}">{{ city["population"] }}
+      </td>
+      <td>{{ city["density"] }}</td>
+    </tr>
+  </tbody>
+</table>
